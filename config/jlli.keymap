@@ -13,9 +13,10 @@
 
         default_layer {
             bindings = <
-&none        &mo 1     &mo 1       &none
-&select_all  &copy     &paste      &kp M
-&kp C_PREV   &kp C_PP  &kp C_NEXT  &kp M
+&none        &none     &none       &none      &none           &none      &none     &none       &none      &none
+&none        &none     &none       &none      &none           &none      &none     &none       &none      &none
+&none        &none     &none       &none      &none           &none      &none     &none       &none      &none
+                                   &none      &none           &none      &none
             >;
         };
     };

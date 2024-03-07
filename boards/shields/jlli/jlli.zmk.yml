@@ -1,0 +1,15 @@
+file_format: "1"
+id: jlli
+name: jlli
+type: shield
+url: https://github.com/vinniefranco
+requires:
+  - nice_nano_v2
+features:
+  - keys
+outputs:
+  - usb
+  - ble
+siblings:
+  - jlli_left
+  - jlli_right

@@ -1,0 +1,8 @@
+config SHIELD_JLLI
+  def_bool $(shields_list_contains,jlli)
+
+config SHIELD_JLLI_LEFT
+  def_bool $(shields_list_contains,jlli_left)
+
+config SHIELD_JLLI_RIGHT
+  def_bool $(shields_list_contains,jlli_right)

@@ -118,6 +118,27 @@
             bindings = <&kp PIPE &kp GREATER_THAN>;
             label = "PIPE_OPR";
         };
+
+        bt_0: bt_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 0>;
+            label = "BT_0";
+        };
+
+        bt_1: bt_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 1>;
+            label = "BT_1";
+        };
+
+        bt_2: bt_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 2>;
+            label = "BT_2";
+        };
     };
 
     keymap {
@@ -161,10 +182,10 @@
 
         bt_control {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &bt BT_CLR    &out OUT_TOG  &sys_reset  &bootloader  &trans
-&trans  &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &trans      &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans      &trans       &trans
-                        &trans  &trans  &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &bt BT_CLR  &none   &sys_reset  &bootloader  &trans
+&trans  &trans  &trans  &trans  &trans  &bt_0       &bt_1   &bt_2       &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans       &trans
+                        &trans  &trans  &trans      &trans
             >;
         };
     };

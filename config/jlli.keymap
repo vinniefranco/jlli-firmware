@@ -4,8 +4,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define MOUSE_TP 3
+#define VBASE 0
+#define VCODE 1
+#define VNAVI 2
+#define VMEDI 3
+#define VBLTH 4
+#define VFUNC 4
+
 #define HAS_MOUSE_KEYS
 #define HAS_MOUSE_TP
 
@@ -157,46 +162,55 @@
 
         default_layer {
             bindings = <
-&kp Q        &kt W            &kp F         &kp P              &kp B      &kp J        &kp L               &kp U         &kp Y             &kp SEMICOLON
-&hml LGUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G      &kp M        &hmr RIGHT_SHIFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
-&lt 4 Z      &kp X            &kp C         &kp D              &kp V      &kp K        &kp H               &kp COMMA     &kp PERIOD        &lt 3 SLASH
-                                            &lt 2 ESC          &kp SPACE  &lt 1 ENTER  &kp BACKSPACE
+&kp Q        &kt W          &kp F          &kp P         &kp B           &kp J          &kp L           &kp U            &kp Y           &kp SEMI
+&hml LGUI A  &hml LALT R    &hml LCTRL S   &hml LSHFT T  &kp G           &kp M          &hmr RSHFT N    &hmr RCTRL E     &hmr RALT I     &hmr RGUI O
+&lt VBLTH Z  &kp X          &kp C          &kp D         &kp V           &kp K          &kp H           &kp COMMA        &kp PERIOD      &lt VMEDI SLASH
+                                           &lt VNAVI ESC &kp SPACE       &lt VCODE RET  &kp BSPC
             >;
         };
 
         code {
             bindings = <
-&kp ASTERISK  &kp N7  &kp N8  &kp N9  &kp SLASH  &kp BACKSLASH  &kp LESS_THAN           &kp PIPE                        &kp GREATER_THAN      &trans
-&kp MINUS     &kp N4  &kp N5  &kp N6  &kp PLUS   &kp PERCENT    &hmr RSHIFT LEFT_BRACE  &hmr RIGHT_CONTROL RIGHT_BRACE  &hmr RIGHT_ALT COLON  &hmr RGUI SEMICOLON
-&kp TILDE     &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp LBKT       &kp RBKT                &trans                          &trans                &trans
-                              &kp N0  &trans     &trans         &trans
+&kp ASTRK    &kp N7         &kp N8         &kp N9        &kp SLASH       &kp BSLH       &kp LT          &kp PIPE         &kp GT           &trans
+&kp MINUS    &kp N4         &kp N5         &kp N6        &kp PLUS        &kp PRCNT      &hmr RSHFT LBRC &hmr RCTRL RBRC  &hmr RALT COLON  &hmr RGUI SEMI
+&kp TILDE    &kp N1         &kp N2         &kp N3        &kp EQUAL       &kp LBKT       &kp RBKT        &trans           &trans           &trans
+                                           &kp N0        &trans          &trans         &trans
             >;
         };
 
         nav {
             bindings = <
-&trans    &trans        &mkp RCLK       &mkp LCLK       &trans  &trans  &trans    &trans    &trans         &trans
-&kp LGUI  &kp LEFT_ALT  &kp LCTRL       &kp LEFT_SHIFT  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP         &kp RIGHT
-&trans    &trans        &kp RG(K_COPY)  &kp K_PASTE     &trans  &trans  &kp HOME  &kp END   &kp PAGE_DOWN  &kp PAGE_UP
-                                        &trans          &trans  &trans  &trans
+&trans      &trans         &mkp RCLK       &mkp LCLK     &trans          &trans         &trans         &trans           &trans            &trans
+&kp LGUI    &kp LALT       &kp LCTRL       &kp LSHFT     &trans          &trans         &kp LEFT       &kp DOWN         &kp UP            &kp RIGHT
+&trans      &trans         &kp RG(K_COPY)  &kp K_PASTE   &trans          &trans         &kp HOME       &kp END          &kp PAGE_DOWN     &kp PAGE_UP
+                                           &trans        &trans          &trans         &trans
             >;
         };
 
         media {
             bindings = <
-&trans      &trans             &trans    &trans           &trans      &trans  &trans  &trans  &trans  &trans
-&kp C_PREV  &kp C_VOLUME_DOWN  &kp C_PP  &kp C_VOLUME_UP  &kp C_NEXT  &trans  &trans  &trans  &trans  &trans
-&trans      &trans             &trans    &trans           &trans      &trans  &trans  &trans  &trans  &trans
-                                         &trans           &trans      &trans  &trans
+&trans      &trans         &trans          &trans        &trans          &trans         &trans        &trans            &trans            &trans
+&kp C_PREV  &kp C_VOL_DN   &kp C_PP        &kp C_VOL_UP  &kp C_NEXT      &trans         &trans        &trans            &trans            &trans
+&trans      &trans         &trans          &trans        &trans          &trans         &trans        &trans            &trans            &trans
+                                           &trans        &trans          &trans         &trans
             >;
         };
 
         bt_control {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &bt BT_CLR  &none   &sys_reset  &bootloader  &trans
-&trans  &trans  &trans  &trans  &trans  &bt_0       &bt_1   &bt_2       &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans       &trans
-                        &trans  &trans  &trans      &trans
+&trans      &trans        &trans          &trans         &trans         &bt BT_CLR      &none         &sys_reset        &bootloader       &trans
+&trans      &trans        &trans          &trans         &trans         &bt_0           &bt_1         &bt_2             &trans            &trans
+&trans      &trans        &trans          &trans         &trans         &trans          &trans        &trans            &trans            &trans
+                                          &trans         &trans         &trans          &trans
+            >;
+        };
+
+        func {
+            bindings = <
+&kp F9      &kp F10       &kp F11         &kp F12        &none          &none           &none         &none             &none            &none 
+&kp F5      &kp F6        &kp F7          &kp F8         &none          &none           &none         &none             &none            &none
+&kp F1      &kp F2        &kp F3          &kp F4         &none          &none           &none         &none             &none            &none
+                                          &none          &none          &none           &none
             >;
         };
     };

@@ -5,7 +5,18 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
-#define BT_LAYER 1
+#define MOUSE_TP 3
+#define HAS_MOUSE_KEYS
+#define HAS_MOUSE_TP
+
+// Personal includes
+#ifdef HAS_MOUSE_KEYS
+     #include "includes/mouse_keys.dtsi"
+#endif
+
+#ifdef HAS_MOUSE_TP
+     #include "includes/mouse_tp.dtsi"
+#endif
 
 / {
     behaviors {
@@ -164,7 +175,7 @@
 
         nav {
             bindings = <
-&trans    &trans        &trans          &trans          &trans  &trans  &trans    &trans    &trans         &trans
+&trans    &trans        &mkp RCLK       &mkp LCLK       &trans  &trans  &trans    &trans    &trans         &trans
 &kp LGUI  &kp LEFT_ALT  &kp LCTRL       &kp LEFT_SHIFT  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP         &kp RIGHT
 &trans    &trans        &kp RG(K_COPY)  &kp K_PASTE     &trans  &trans  &kp HOME  &kp END   &kp PAGE_DOWN  &kp PAGE_UP
                                         &trans          &trans  &trans  &trans

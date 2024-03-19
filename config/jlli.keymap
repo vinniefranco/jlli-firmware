@@ -31,6 +31,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
+            hold-trigger-on-release;
             hold-trigger-key-positions = <32 33 31 30 25 26 27 28 29 19 18 17 16 15 5 6 7 8 9>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
@@ -44,6 +45,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
+            hold-trigger-on-release;
             hold-trigger-key-positions = <32 33 31 30 22 20 21 23 24 14 13 12 11 10 0 1 2 3 4>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
@@ -162,10 +164,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kt W          &kp F          &kp P         &kp B           &kp J          &kp L           &kp U            &kp Y           &kp SEMI
+&kp Q        &kt W          &kp F          &kp P         &kp B           &kp J          &kp L           &kp U            &kp Y           &lt VBLTH SEMI
 &hml LGUI A  &hml LALT R    &hml LCTRL S   &hml LSHFT T  &kp G           &kp M          &hmr RSHFT N    &hmr RCTRL E     &hmr RALT I     &hmr RGUI O
 &lt VBLTH Z  &kp X          &kp C          &kp D         &kp V           &kp K          &kp H           &kp COMMA        &kp PERIOD      &lt VMEDI SLASH
-                                           &lt VNAVI ESC &kp SPACE       &lt VCODE RET  &lt VBLTH BSPC
+                                           &lt VNAVI ESC &kp SPACE       &lt VCODE RET  &kp BSPC
             >;
         };
 
